@@ -6,6 +6,7 @@ target 'Gentleman' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.0.0-beta.3'
+  pod 'AWSCognito'
 
   # Pods for Gentleman
 

@@ -1,24 +1,27 @@
 //
-//  ViewController.swift
+//  MainVC.swift
 //  Gentleman
 //
-//  Created by Prasant Kalidindi on 3/6/19.
+//  Created by Prasant Kalidindi on 4/10/19.
 //  Copyright © 2019 Prasant Kalidindi. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+class MainVC: UIViewController {
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showCalibration), name: NSNotification.Name("ShowCalibration"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showSettings), name: NSNotification.Name("ShowSettings"), object: nil)
+        
     }
-
-
-    @IBAction func open(_ sender: Any) {
-        let parameters: Parameters = [
+    
+    @IBAction func openDoor(_ sender: Any) {
+        let parameters : [String:Any] = [
             "EventName": "CreateJob",
             "JobID": "ijofsij234235",
             "JobDocument":[
@@ -43,8 +46,19 @@ class ViewController: UIViewController {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
             }
-            
         }
     }
+    
+    @objc func showCalibration() {
+        performSegue(withIdentifier: "ShowCalibration", sender: nil)
+    }
+    
+    @objc func showSettings(){
+        performSegue(withIdentifier: "ShowSettings", sender: nil)
+    }
+    
+    @IBAction func onMoreTapped() {
+        print("TOGGLE SIDE MENU")
+        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+    }
 }
-
