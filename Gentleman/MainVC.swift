@@ -8,8 +8,17 @@
 
 import UIKit
 import Alamofire
+import LocalAuthentication
+import KeychainAccess
 
 class MainVC: UIViewController {
+    
+    @IBOutlet weak var openButton: UIButton!
+    @IBOutlet var txtSecret: UITextField!
+    
+    let keychain = Keychain(service: "com.sample.Gentleman")
+    
+    @IBOutlet weak var Button: UIButton!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -21,6 +30,14 @@ class MainVC: UIViewController {
     }
     
     @IBAction func openDoor(_ sender: Any) {
+        if(Button.currentTitle == "OPEN"){
+            Button.setTitle("CLOSE" , for: .normal)
+        }
+        else if(Button.currentTitle == "CLOSE"){
+            Button.setTitle("OPEN" , for: .normal)
+        }
+        
+        /*
         let parameters : [String:Any] = [
             "EventName": "CreateJob",
             "JobID": "ijofsij234235",
@@ -47,6 +64,7 @@ class MainVC: UIViewController {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
             }
         }
+ */
     }
     
     @objc func showCalibration() {

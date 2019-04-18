@@ -3,22 +3,26 @@ PODS:
   - AWSCognito (2.9.2):
     - AWSCore (= 2.9.2)
   - AWSCore (2.9.2)
+  - KeychainAccess (3.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.3)
   - AWSCognito
+  - KeychainAccess
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AWSCognito
     - AWSCore
+    - KeychainAccess
 
 SPEC CHECKSUMS:
   Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
   AWSCognito: 65b82aec8b402683f381c6c826086a5d3be992cd
   AWSCore: b1675e12bd3f2b313dc96c5b6a336e23380e51a2
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
 
-PODFILE CHECKSUM: 61fe1c4310e46889d8dbdfc2e36e7b8dd6854892
+PODFILE CHECKSUM: 825592781985eb472bc91fa294c4de2868925697
 
 COCOAPODS: 1.6.1

@@ -14,6 +14,12 @@
 		706CF5CA225AB08300622324 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70936722223082A600B19323 /* ContainerVC.swift */; };
 		706CF5CC225BDD7500622324 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5CB225BDD7500622324 /* SideMenuVC.swift */; };
 		706CF5CE225EB00100622324 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5CD225EB00100622324 /* MainVC.swift */; };
+		706CF5D02263C3FF00622324 /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5CF2263C3FF00622324 /* CalibrationVC.swift */; };
+		706CF5D22265159300622324 /* SpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5D12265159200622324 /* SpeedVC.swift */; };
+		706CF5D52266795600622324 /* Gentleman.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5D32266795600622324 /* Gentleman.xcdatamodeld */; };
+		706CF5D822667C7000622324 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5D622667C7000622324 /* Profile+CoreDataClass.swift */; };
+		706CF5D922667C7000622324 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5D722667C7000622324 /* Profile+CoreDataProperties.swift */; };
+		706CF5DB22667D4100622324 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5DA22667D4100622324 /* PersistenceManager.swift */; };
 		70936721223082A600B19323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70936720223082A600B19323 /* AppDelegate.swift */; };
 		70936723223082A600B19323 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70936722223082A600B19323 /* ContainerVC.swift */; };
 		70936726223082A600B19323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70936724223082A600B19323 /* Main.storyboard */; };
@@ -49,6 +55,12 @@
 		5717DE1B8D64CE0C7F429D5A /* Pods-GentlemanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GentlemanUITests.release.xcconfig"; path = "Target Support Files/Pods-GentlemanUITests/Pods-GentlemanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		706CF5CB225BDD7500622324 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		706CF5CD225EB00100622324 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		706CF5CF2263C3FF00622324 /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
+		706CF5D12265159200622324 /* SpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVC.swift; sourceTree = "<group>"; };
+		706CF5D42266795600622324 /* Gentleman.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gentleman.xcdatamodel; sourceTree = "<group>"; };
+		706CF5D622667C7000622324 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		706CF5D722667C7000622324 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		706CF5DA22667D4100622324 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		7093671D223082A600B19323 /* Gentleman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gentleman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70936720223082A600B19323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70936722223082A600B19323 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -143,6 +155,9 @@
 		7093671F223082A600B19323 /* Gentleman */ = {
 			isa = PBXGroup;
 			children = (
+				706CF5D622667C7000622324 /* Profile+CoreDataClass.swift */,
+				706CF5D722667C7000622324 /* Profile+CoreDataProperties.swift */,
+				706CF5D32266795600622324 /* Gentleman.xcdatamodeld */,
 				70936720223082A600B19323 /* AppDelegate.swift */,
 				70936722223082A600B19323 /* ContainerVC.swift */,
 				706CF5CB225BDD7500622324 /* SideMenuVC.swift */,
@@ -151,6 +166,9 @@
 				70936727223082A700B19323 /* Assets.xcassets */,
 				70936729223082A700B19323 /* LaunchScreen.storyboard */,
 				7093672C223082A700B19323 /* Info.plist */,
+				706CF5CF2263C3FF00622324 /* CalibrationVC.swift */,
+				706CF5D12265159200622324 /* SpeedVC.swift */,
+				706CF5DA22667D4100622324 /* PersistenceManager.swift */,
 			);
 			path = Gentleman;
 			sourceTree = "<group>";
@@ -382,6 +400,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -390,6 +409,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,9 +423,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				706CF5D52266795600622324 /* Gentleman.xcdatamodeld in Sources */,
+				706CF5DB22667D4100622324 /* PersistenceManager.swift in Sources */,
 				70936723223082A600B19323 /* ContainerVC.swift in Sources */,
 				706CF5CE225EB00100622324 /* MainVC.swift in Sources */,
+				706CF5D822667C7000622324 /* Profile+CoreDataClass.swift in Sources */,
 				70936721223082A600B19323 /* AppDelegate.swift in Sources */,
+				706CF5D02263C3FF00622324 /* CalibrationVC.swift in Sources */,
+				706CF5D22265159300622324 /* SpeedVC.swift in Sources */,
+				706CF5D922667C7000622324 /* Profile+CoreDataProperties.swift in Sources */,
 				706CF5CC225BDD7500622324 /* SideMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F992D3JRY3;
 				INFOPLIST_FILE = Gentleman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,6 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F992D3JRY3;
 				INFOPLIST_FILE = Gentleman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,6 +765,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		706CF5D32266795600622324 /* Gentleman.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				706CF5D42266795600622324 /* Gentleman.xcdatamodel */,
+			);
+			currentVersion = 706CF5D42266795600622324 /* Gentleman.xcdatamodel */;
+			path = Gentleman.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 70936715223082A600B19323 /* Project object */;
 }

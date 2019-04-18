@@ -7,6 +7,7 @@ target 'Gentleman' do
 
   pod 'Alamofire', '~> 5.0.0-beta.3'
   pod 'AWSCognito'
+  pod 'KeychainAccess'
 
   # Pods for Gentleman
 
