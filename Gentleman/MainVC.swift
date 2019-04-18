@@ -30,11 +30,13 @@ class MainVC: UIViewController {
     }
     
     @IBAction func openDoor(_ sender: Any) {
-        if(Button.currentTitle == "OPEN"){
-            Button.setTitle("CLOSE" , for: .normal)
-        }
-        else if(Button.currentTitle == "CLOSE"){
-            Button.setTitle("OPEN" , for: .normal)
+        if(twoFA() == true){
+            if(Button.currentTitle == "OPEN"){
+                Button.setTitle("CLOSE" , for: .normal)
+            }
+            else if(Button.currentTitle == "CLOSE"){
+                Button.setTitle("OPEN" , for: .normal)
+            }
         }
         
         /*
@@ -65,6 +67,27 @@ class MainVC: UIViewController {
             }
         }
  */
+    }
+    
+    @objc func twoFA() -> Bool {
+        var context = LAContext()
+        context.localizedCancelTitle = "Enter Passcode"
+        var error: NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+            //LAPolicy.deviceOwnerAuthentication
+        }
+        var out = false
+        //faceIDLabel.isHidden = (state == .loggedin) || (context.biometryType != .faceID)
+        let reason = "Verify your identity"
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason : reason) {success, error in
+            if success{
+                out = true
+            } else{
+                out = false
+            }
+        }
+        return out
+        
     }
     
     @objc func showCalibration() {
