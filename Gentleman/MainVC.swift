@@ -14,59 +14,82 @@ import KeychainAccess
 class MainVC: UIViewController {
     
     @IBOutlet weak var openButton: UIButton!
+    @IBOutlet weak var topHalf: UIImageView!
     @IBOutlet var txtSecret: UITextField!
-    
-    let keychain = Keychain(service: "com.sample.Gentleman")
-    
     @IBOutlet weak var Button: UIButton!
+    @IBOutlet weak var bottomHalf: UIImageView!
+    @IBOutlet weak var openLabel: UIImageView!
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        if(Button.currentImage == UIImage(named: "locked")){
+            topHalf.center.x = 170
+            topHalf.center.y = 390
+            bottomHalf.center.x = 203
+            bottomHalf.center.y = 422
+            openLabel.image = UIImage(named: "open")
+        }
+            
+        else if(Button.currentImage == UIImage(named: "unlocked")){
+            topHalf.center.x = 220
+            topHalf.center.y = 333
+            bottomHalf.center.x = 154
+            bottomHalf.center.y = 479
+            openLabel.image = UIImage(named: "close")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(showCalibration), name: NSNotification.Name("ShowCalibration"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showSettings), name: NSNotification.Name("ShowSettings"), object: nil)
         
     }
     
-    @IBAction func openDoor(_ sender: Any) {
+    
+    @IBAction func openDoor(_ sender: UIButton) {
+        let identifier = UUID()
         if(twoFA() == true){
-            if(Button.currentTitle == "OPEN"){
-                Button.setTitle("CLOSE" , for: .normal)
+            let duration: Double = 2.0
+            if(Button.currentImage == UIImage(named: "locked")){
+                UIView.animate(withDuration: duration){
+                    self.unlock()
+                }
+                Button.setImage(UIImage(named: "unlocked"), for: .normal)
+                openLabel.image = UIImage(named: "open")
             }
-            else if(Button.currentTitle == "CLOSE"){
-                Button.setTitle("OPEN" , for: .normal)
+            else if(Button.currentImage == UIImage(named: "unlocked")){
+                UIView.animate(withDuration: duration){
+                    self.lock()
+                }
+                Button.setImage(UIImage(named: "locked"), for: .normal)
+                openLabel.image = UIImage(named: "close")
             }
-        }
         
-        /*
-        let parameters : [String:Any] = [
-            "EventName": "CreateJob",
-            "JobID": "ijofsij234235",
-            "JobDocument":[
-                "job": "openDoor"
-            ],
-            "Targets":[
-                "Things":["thing2","thing1","thingRandom"],
-                "ThingGroups":["groupThatDoesn", "testThingGroup"]
-            ],
-            "TargetSelection":"CONTINUOUS"
-        ]
-        
-        AF.request("https://0u7cqbl0h4.execute-api.us-east-2.amazonaws.com/default/jobsLambda", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
+         let parameters : [String:Any] = [
+         "EventName": "CreateJob",
+         "JobID": identifier.uuidString,
+         "JobDocument":[
+            "job": "openDoor"
+         ],
+         "Targets":[
+         "Things":["raspberryPi"],
+         "ThingGroups":["groupThatDoesn", "testThingGroup"]
+         ],
+         "TargetSelection":"CONTINUOUS"
+         ]
+    AF.request("https://0u7cqbl0h4.execute-api.us-east-2.amazonaws.com/default/jobsLambda", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{response in
+         print("Request: \(String(describing: response.request))")   // original url request
+         print("Response: \(String(describing: response.response))") // http url response
+         print("Result: \(response.result)")                         // response serialization result
+         
+         if let json = response.result.value {
+         print("JSON: \(json)") // serialized json response
+         }
+         
+         if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+         print("Data: \(utf8Text)") // original server data as UTF8 string
+         }
+         }
         }
- */
     }
     
     @objc func twoFA() -> Bool {
@@ -87,7 +110,6 @@ class MainVC: UIViewController {
             }
         }
         return out
-        
     }
     
     @objc func showCalibration() {
@@ -101,5 +123,19 @@ class MainVC: UIViewController {
     @IBAction func onMoreTapped() {
         print("TOGGLE SIDE MENU")
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+    }
+    
+    func unlock(){
+        topHalf.center.x = 220
+        topHalf.center.y = 333
+        bottomHalf.center.x = 154
+        bottomHalf.center.y = 479
+    }
+    
+    func lock(){
+        topHalf.center.x = 170
+        topHalf.center.y = 390
+        bottomHalf.center.x = 203
+        bottomHalf.center.y = 422
     }
 }

@@ -24,7 +24,7 @@ class SpeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        speedLabel.text = String(sliderValue.value)
+        speedLabel.text = String(Int(sliderValue.value))
         NotificationCenter.default.addObserver(self, selector: #selector(showMain), name: NSNotification.Name("ShowMain"), object: nil)
     }
     

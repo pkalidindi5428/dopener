@@ -20,6 +20,8 @@
 		706CF5D822667C7000622324 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5D622667C7000622324 /* Profile+CoreDataClass.swift */; };
 		706CF5D922667C7000622324 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5D722667C7000622324 /* Profile+CoreDataProperties.swift */; };
 		706CF5DB22667D4100622324 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CF5DA22667D4100622324 /* PersistenceManager.swift */; };
+		707DDE58226D473F00405A1D /* MyriadPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 707DDE57226D473F00405A1D /* MyriadPro-Light.otf */; };
+		707E693F22694E2600F6E09A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707E693E22694E2500F6E09A /* GoogleService-Info.plist */; };
 		70936721223082A600B19323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70936720223082A600B19323 /* AppDelegate.swift */; };
 		70936723223082A600B19323 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70936722223082A600B19323 /* ContainerVC.swift */; };
 		70936726223082A600B19323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70936724223082A600B19323 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		706CF5D622667C7000622324 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		706CF5D722667C7000622324 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		706CF5DA22667D4100622324 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		707DDE57226D473F00405A1D /* MyriadPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Light.otf"; sourceTree = "<group>"; };
+		707E693E22694E2500F6E09A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7093671D223082A600B19323 /* Gentleman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gentleman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70936720223082A600B19323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70936722223082A600B19323 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		7093671F223082A600B19323 /* Gentleman */ = {
 			isa = PBXGroup;
 			children = (
+				707E693E22694E2500F6E09A /* GoogleService-Info.plist */,
 				706CF5D622667C7000622324 /* Profile+CoreDataClass.swift */,
 				706CF5D722667C7000622324 /* Profile+CoreDataProperties.swift */,
 				706CF5D32266795600622324 /* Gentleman.xcdatamodeld */,
@@ -167,6 +172,7 @@
 				70936729223082A700B19323 /* LaunchScreen.storyboard */,
 				7093672C223082A700B19323 /* Info.plist */,
 				706CF5CF2263C3FF00622324 /* CalibrationVC.swift */,
+				707DDE57226D473F00405A1D /* MyriadPro-Light.otf */,
 				706CF5D12265159200622324 /* SpeedVC.swift */,
 				706CF5DA22667D4100622324 /* PersistenceManager.swift */,
 			);
@@ -300,6 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7093672B223082A700B19323 /* LaunchScreen.storyboard in Resources */,
+				707DDE58226D473F00405A1D /* MyriadPro-Light.otf in Resources */,
+				707E693F22694E2600F6E09A /* GoogleService-Info.plist in Resources */,
 				70936728223082A700B19323 /* Assets.xcassets in Resources */,
 				70936726223082A600B19323 /* Main.storyboard in Resources */,
 			);
@@ -400,7 +408,11 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -409,7 +421,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

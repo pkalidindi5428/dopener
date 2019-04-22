@@ -8,6 +8,8 @@ target 'Gentleman' do
   pod 'Alamofire', '~> 5.0.0-beta.3'
   pod 'AWSCognito'
   pod 'KeychainAccess'
+  pod 'Firebase'
+  pod 'RealmSwift'
 
   # Pods for Gentleman
 

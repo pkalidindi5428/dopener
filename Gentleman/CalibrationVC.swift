@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CalibrationVC: UIViewController {
     
@@ -24,7 +25,7 @@ class CalibrationVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        distanceLabel.text = String(stepperControl.value)
+        distanceLabel.text = String(Int(stepperControl.value))
 
         // Do any additional setup after loading the view
         NotificationCenter.default.addObserver(self, selector: #selector(showSpeed), name: NSNotification.Name("ShowSpeed"), object: nil)
